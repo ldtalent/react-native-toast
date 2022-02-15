@@ -9,7 +9,9 @@ import {
     StyleSheet,
     Text,
     View,
+    LogBox
 } from 'react-native';
+
 import Toast, {DURATION} from 'react-native-easy-toast'
 
 export default class ToastTest extends Component {
@@ -19,6 +21,10 @@ export default class ToastTest extends Component {
             position: 'bottom',
             style: {},
         }
+    }
+
+    componentDidMount() {
+        LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
     }
 
     onClick(text, position, duration, withStyle) {
